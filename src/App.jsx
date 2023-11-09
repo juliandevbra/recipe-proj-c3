@@ -4,17 +4,23 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ClassComponent from './Components/ClassComponent'
 import FuncComponent from './Components/FuncComponent'
+import Form from './Parcial/Form'
+import Card from './Parcial/Card'
 
 function App() {
-  const [toggle, setToggle] = useState(false)
+  // const [toggle, setToggle] = useState(false)
+
+
 
   return (
     <>
-    {toggle ? 
+    {/* {toggle ? 
      <ClassComponent/> :
      <FuncComponent/>
      }
-     <button onClick={() => setToggle(!toggle)}>Cambiar a {toggle ? 'Funcion' : 'Clase'}</button>
+     <button onClick={() => setToggle(!toggle)}>Cambiar a {toggle ? 'Funcion' : 'Clase'}</button> */}
+    
+    <Form />
     </>
   )
 }

@@ -7,6 +7,7 @@ const FuncComponent = () => {
     // const [send, setSend] = useState(false)
     const [loading, setLoading] = useState(true)
     console.log('Se ejecuta la parte lógica')
+
     //Montaje
     useEffect(() => {
         console.log('Este useEffect se ejecuta una sola vez')
