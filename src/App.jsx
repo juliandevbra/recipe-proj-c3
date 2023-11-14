@@ -1,19 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import DogApi from './Components/DogApi'
-import CatApi from './Components/CatApi'
+import Navbar from './Components/Navbar'
+import About from './Pages/About'
+import Contact from './Pages/Contact'
+import Home from './Pages/Home'
+import PageNotFound from './Pages/PageNotFound'
+import RecipeDetail from './Pages/RecipeDetail'
 
 function App() {
 
-
   return (
     <>
-      {/* <DogApi/> */}
-      <CatApi/>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/contacto' element={<Contact/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/detail/:id' element={<RecipeDetail/>}/>
+        <Route path='*' element={<PageNotFound/>}/>
+      </Routes>
     </>
   )
+
 }
 
 export default App
