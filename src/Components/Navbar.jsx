@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import LoginForm from './LoginForm'
 
 const Navbar = () => {
 
@@ -26,7 +27,7 @@ const Navbar = () => {
         <Link to='/'><h3>Home</h3></Link>
         <Link to='/contacto'><h3>Contact</h3></Link>
         <Link to='/about'><h3>About</h3></Link>
-
+        <LoginForm/>
         {/* 
         Ejemplo para navigate
         <form onSubmit={login}>
