@@ -4,25 +4,25 @@ import { useParams } from 'react-router-dom'
 import { useRecipeStates } from '../Context/RecipeContext'
 
 const RecipeDetail = () => {
-    const [recipe, setRecipe] = useState({})
     const params = useParams()
-    const {favs, setFavs} = useRecipeStates()
+    const {state, dispatch} = useRecipeStates()
+    const {title, image, instructions} = state.recipeDetail
     console.log(params)
     const apiKey = '68d481a0fbc340308fbf934f836ee8c6' // USAR OTRA KEY
     const url = `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=${apiKey}`
 
     useEffect(() => {
         axios(url)
-        .then(res => setRecipe(res.data))
+        .then(res => dispatch({type: 'GET_RECIPE', payload: res.data}))
     }, [])
 
 
   return (
     <div>
-        <h2>{recipe.title}</h2>
-        <img src={recipe.image} alt="" />
-        <p>{recipe.instructions}</p>
-        <button onClick={() => setFavs([...favs, recipe])}>⭐</button>
+        <h2>{title}</h2>
+        <img src={image} alt="" />
+        <p>{instructions}</p>
+        <button onClick={() => dispatch({type: 'ADD_FAV', payload: recipe})}>⭐</button>
     </div>
   )
 }

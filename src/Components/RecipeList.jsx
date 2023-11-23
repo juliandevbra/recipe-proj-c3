@@ -3,12 +3,12 @@ import Card from './Card'
 
 const RecipeList = () => {
    
-  const {list} = useRecipeStates()
+  const {state} = useRecipeStates()
 
 
   return (
-    <div>
-        {list.map((recipe) => <Card recipe={recipe} key={recipe.id}/>)}
+    <div >
+        {state.list.map((recipe) => <Card recipe={recipe} key={recipe.id}/>)}
     </div>
   )
 }

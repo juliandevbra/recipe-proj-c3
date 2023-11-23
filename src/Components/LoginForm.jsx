@@ -3,7 +3,7 @@ import React from 'react'
 const LoginForm = ({handleClick}) => {
 
   return (
-    <div>
+    <div className='form'>
         <h4>Loguear a Recetas DH</h4>
         <input role='Email' type="text"  placeholder='Email'/>
         <input data-testid='Password' type="text" placeholder='Password'/>
